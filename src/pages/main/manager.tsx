@@ -207,7 +207,7 @@ const Gerenciamento = () => {
         </div>
       </section>
 
-      <div className="bg-black text-white h-screen w-2/6 z-1 absolute right-0 flex  flex-col justify-center items-center">
+      <div className=" bg-black text-white h-screen w-2/6 z-1 absolute right-0 flex  flex-col justify-center items-center">
         <GrClose
           className="self-end mr-6 mt-2 text-white transition  ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  cursor-pointer duration-300 hover:opacity-90"
           color="white"
