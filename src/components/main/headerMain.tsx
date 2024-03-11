@@ -2,8 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import Logo from "../../assets/img/LogoTecnoPocket.png";
 import { GrMailOption, GrPhone, GrLocation, GrSearch } from "react-icons/gr";
+import { HeaderMain } from "@/src/interfaces/main";
+import AddProduct from "./addProduct";
 
-const HeaderMain = () => {
+const HeaderMain = (props: HeaderMain) => {
   return (
     <section className="bg-[#212124] w-5/6 h-32 my-8 flex gap-10">
       <div className="w-1/6 mt-2 ml-4">
@@ -36,6 +38,9 @@ const HeaderMain = () => {
             <li className="flex items-center gap-2  cursor-pointer	 ">
               <Link href={"/main/manager"}>Gerenciamento</Link>
             </li>
+            {props.typePage === "manager" && (
+              <AddProduct onChangeModal={props.onChangeModal} typeForm="new" />
+            )}
             <li className="absolute right-36 flex gap-2">
               <input
                 type="text"
