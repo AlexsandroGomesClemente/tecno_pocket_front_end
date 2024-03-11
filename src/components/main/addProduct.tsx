@@ -8,9 +8,9 @@ const AddProduct = (props: FormModalProduct) => {
         localStorage.removeItem("updateProduct")  
         props.onChangeModal()
       }}
-      className="absolute right-96 flex items-center gap-2 mr-5 cursor-pointer	hover:text-red-700"
+      className="absolute right-96 flex items-center text-[#25335C] gap-2 mr-5 cursor-pointer	hover:text-[#25335C]"
     >
-      <GrAddCircle color="white" size={20} /> Adicionar Produto
+      <GrAddCircle color="#25335C" size={20} /> Adicionar Produto
     </li>
   );
 };

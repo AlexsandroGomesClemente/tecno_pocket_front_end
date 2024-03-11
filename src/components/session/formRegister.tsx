@@ -52,12 +52,12 @@ const FormRegister = () => {
     <>
       <form
         onKeyUp={handleKeyPress}
-        className="mt-20 w-full h-5/6 flex justify-center items-center flex-col gap-4"
+        className="mt-20 w-full h-[18rem] flex justify-center items-center flex-col gap-4"
       >
-        <div className="flex flex-row justify-start items-center w-5/6 h-4/6 mb-3  border-b-2 border-red-600	 ">
-          <GrUser size={30} color="#B91202" className="mx-4" />
+        <div className="flex flex-row justify-start items-center w-5/6 h-4/6 mb-3  border-b-2 border-white	 ">
+          <GrUser size={30} color="#25335C" className="mx-4" />
           <input
-            className="text-lg w-5/6  placeholder:text-[#B91202]  text-[#B91202] bg-transparent focus:no-underline pl-1 outline-none"
+            className="text-lg w-5/6  placeholder:text-[#25335C]  text-[#25335C] bg-transparent focus:no-underline pl-1 outline-none"
             type="email"
             placeholder="Digite seu nome"
             name="nome"
@@ -66,10 +66,10 @@ const FormRegister = () => {
             onChange={(e) => setName(e.target.value)}
           />
         </div>
-        <div className="flex flex-row justify-start items-center w-5/6 h-4/6 mb-3  border-b-2 border-red-600	 ">
-          <GrMailOption size={30} color="#B91202" className="mx-4" />
+        <div className="flex flex-row justify-start items-center w-5/6 h-4/6 mb-3  border-b-2 border-white	 ">
+          <GrMailOption size={30} color="#25335C" className="mx-4" />
           <input
-            className="text-lg w-5/6  placeholder:text-[#B91202]  text-[#B91202] bg-transparent focus:no-underline pl-1 outline-none"
+            className="text-lg w-5/6  placeholder:text-[#25335C]  text-[#25335C] bg-transparent focus:no-underline pl-1 outline-none"
             type="email"
             placeholder="Digite seu email"
             name="email"
@@ -78,10 +78,10 @@ const FormRegister = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <div className="flex flex-row justify-start items-center w-5/6 h-4/6 mb-3  border-b-2 border-red-600	 ">
-          <GrLock size={30} color="#B91202" className="mx-4" />
+        <div className="flex flex-row justify-start items-center w-5/6 h-4/6 mb-3  border-b-2 border-white ">
+          <GrLock size={30} color="#25335C" className="mx-4" />
           <input
-            className="text-lg w-5/6  placeholder:text-[#B91202] text-[#B91202] focus:no-underline pl-1 outline-none bg-transparent"
+            className="text-lg w-5/6  placeholder:text-[#25335C] text-[#25335C] focus:no-underline pl-1 outline-none bg-transparent"
             type="password"
             placeholder="Digite sua senha"
             name="password"
@@ -90,10 +90,10 @@ const FormRegister = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <div className="flex flex-row justify-start items-center w-5/6 h-4/6 mb-3  border-b-2 border-red-600	 ">
-          <GrCycle size={30} color="#B91202" className="mx-4" />
+        <div className="flex flex-row justify-start items-center w-5/6 h-4/6 mb-3  border-b-2 border-white ">
+          <GrCycle size={30} color="#25335C" className="mx-4" />
           <input
-            className="text-lg w-5/6  placeholder:text-[#B91202] text-[#B91202] focus:no-underline pl-1 outline-none bg-transparent"
+            className="text-lg w-5/6  placeholder:text-[#25335C] text-[#25335C] focus:no-underline pl-1 outline-none bg-transparent"
             type="password"
             placeholder="Confirme sua senha"
             name="confirm-password"
@@ -106,9 +106,9 @@ const FormRegister = () => {
 
       <button
         onClick={registerUser}
-        className="text-white transition  ease-in-out delay-150 mt-20 w-5/6 h-16 bg-[#B91202] rounded-3xl text-2xl hover:-translate-y-1 hover:scale-110 hover:bg-[#B91247] duration-300 hover:opacity-90 "
+        className="text-white transition  ease-in-out delay-150 mt-10 w-5/6 h-16 bg-[#25335C] rounded-3xl text-2xl hover:-translate-y-1 hover:scale-110 hover:bg-cyan-400	 duration-300 hover:opacity-90 "
       >
-        Entrar
+        Registrar
       </button>
       <Toaster />
     </>

@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import "react-alice-carousel/lib/alice-carousel.css";
+
 
 
 * {
@@ -12,28 +14,36 @@
 }
 
 .glass-effect {
-  background: rgba(205, 205, 205, 0.136);
+  background: rgba(210, 210, 212, 0.136);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(13.5px);
   -webkit-backdrop-filter: blur(13.5px);
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(236, 235, 238, 0.18);
 }
 
 
 .bg-main {
-  background-image: url("../src/assets/img/testeImg.jpg");
+  background-image: url("../src/assets/img/bgMain.jpg");
   background-repeat: no-repeat;
   background-position: initial;
   background-size: cover;
 }
 
 .bg-shop {
-  /*background-image: url("../src/assets/img/3154.jpg");*/
-  background-color: rgb(29, 18, 47);
+  background-image: url("../src/assets/img/wallpaperMain.jpg");
+  /* background-color: rgb(29, 18, 47); */
   background-repeat: no-repeat;
   background-position: initial;
-  background-size: cover;
+  background-size:cover;
+}
+
+.bg-card {
+  /* background-image: url("../src/assets/img/wallpaperMain.jpg"); */
+  /* background-color: rgb(29, 18, 47); */
+  background-repeat: no-repeat;
+  background-position: initial;
+  background-size:cover;
 }
 
 .product-off {
@@ -51,7 +61,7 @@
 }
 
 th {
-  background-color: #212124;
+  background-color: #25335C;
 }
 
 /* Works on Firefox */

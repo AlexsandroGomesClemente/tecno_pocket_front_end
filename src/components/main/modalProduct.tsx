@@ -10,7 +10,7 @@ const ModalProduct = (props: ModalProducts) => {
 
   return (
     <div
-      className="bg-black text-white h-screen w-2/6 z-1 absolute right-0 flex flex-col justify-center items-center transition-opacity duration-600 ease-in-out"
+      className="glass-effect text-white h-screen w-2/6 z-1 absolute right-0 flex flex-col justify-center items-center transition-opacity duration-600 ease-in-out"
       style={{ opacity: props.modalOpen ? 1 : 0 }}
     >
       <CloseModalProducts onChangeModal={props.onChangeModal} />

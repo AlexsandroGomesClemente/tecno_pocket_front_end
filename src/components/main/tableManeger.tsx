@@ -11,6 +11,10 @@ const TableManager = (props: TableMain) => {
     try {
       const response = await httpCommons.get(`/products`);
       if (response.status === 200) {
+        localStorage.setItem(
+          "produtos",
+          JSON.stringify(response.data.produtos)
+        );
         setDataTable(response.data.produtos);
       }
     } catch (error) {
@@ -39,6 +43,14 @@ const TableManager = (props: TableMain) => {
   useEffect(() => {
     getDataTable();
   }, [props.active]);
+
+  setInterval(() => {
+    const hasSearch =
+      JSON.parse(localStorage.getItem("searchProduct") as string) || [];
+    if (hasSearch.length > 0) {
+      setDataTable(hasSearch);
+    }
+  }, 100);
 
   return (
     <div className=" w-full h-4/6 flex justify-center items-center gap-8  ">

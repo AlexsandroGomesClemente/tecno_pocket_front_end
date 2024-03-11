@@ -27,6 +27,19 @@ const FormModalProduct = (props: FormModalProduct) => {
 
   const saveProduct = async (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
+    let savePhoto
+
+    if (imagem !== "") {
+      const formData = new FormData();
+      formData.append("imagem", imagem);
+
+      const config = {
+        headers: {
+          "content-type": "multipart/form-data",
+        },
+      };
+      savePhoto = await httpCommons.post(`uploadImage`, formData, config);
+    }
 
     const product = {
       titulo,
@@ -34,7 +47,7 @@ const FormModalProduct = (props: FormModalProduct) => {
       preco,
       categoria,
       marca,
-      imagem,
+      imagem: imagem !== "" ? savePhoto?.data : "" ,
     };
 
     if (
@@ -67,11 +80,14 @@ const FormModalProduct = (props: FormModalProduct) => {
 
   return (
     <>
-      <form className="w-full h-4/6 flex flex-col justify-center items-center">
-        <div className="flex flex-row justify-start items-center w-5/6 h-20 mb-5  border-b-2 border-red-600	 ">
-          <GrArchive size={30} color="#B91202" className="mx-4" />
+      <form
+        encType="multipart/form-data"
+        className="w-full h-4/6 flex flex-col justify-center items-center"
+      >
+        <div className="flex flex-row justify-start items-center w-5/6 h-20 mb-5  border-b-2 border-white-600	 ">
+          <GrArchive size={30} color="#F6900C" className="mx-4" />
           <input
-            className="text-lg w-5/6  placeholder:text-[#B91202]  text-[#B91202] bg-transparent focus:no-underline pl-1 outline-none"
+            className="text-lg w-5/6  placeholder:text-[#25335C]  text-[#25335C] bg-transparent focus:no-underline pl-1 outline-none"
             type="text"
             placeholder="Digite o nome do produto"
             name="produto"
@@ -80,10 +96,10 @@ const FormModalProduct = (props: FormModalProduct) => {
             onChange={(e) => setTitulo(e.target.value)}
           />
         </div>
-        <div className="flex flex-row justify-start items-center w-5/6 h-20 mb-5  border-b-2 border-red-600	 ">
-          <GrBlockQuote size={30} color="#B91202" className="mx-4" />
+        <div className="flex flex-row justify-start items-center w-5/6 h-20 mb-5  border-b-2 border-white-600	 ">
+          <GrBlockQuote size={30} color="#F6900C" className="mx-4" />
           <input
-            className="text-lg w-5/6  placeholder:text-[#B91202]  text-[#B91202] bg-transparent focus:no-underline pl-1 outline-none"
+            className="text-lg w-5/6  placeholder:text-[#25335C]  text-[#25335C] bg-transparent focus:no-underline pl-1 outline-none"
             type="text"
             placeholder="Digite a descrição"
             name="descricao"
@@ -92,10 +108,10 @@ const FormModalProduct = (props: FormModalProduct) => {
             onChange={(e) => setDescricao(e.target.value)}
           />
         </div>
-        <div className="flex flex-row justify-start items-center w-5/6 h-20 mb-5  border-b-2 border-red-600	 ">
-          <GrCurrency size={30} color="#B91202" className="mx-4" />
+        <div className="flex flex-row justify-start items-center w-5/6 h-20 mb-5  border-b-2 border-white-600	 ">
+          <GrCurrency size={30} color="#F6900C" className="mx-4" />
           <input
-            className="text-lg w-5/6  placeholder:text-[#B91202]  text-[#B91202] bg-transparent focus:no-underline pl-1 outline-none"
+            className="text-lg w-5/6  placeholder:text-[#25335C]  text-[#25335C] bg-transparent focus:no-underline pl-1 outline-none"
             type="number"
             placeholder="Digite o preço"
             name="preco"
@@ -104,10 +120,10 @@ const FormModalProduct = (props: FormModalProduct) => {
             onChange={(e) => setPreco(e.target.value)}
           />
         </div>
-        <div className="flex flex-row justify-start items-center w-5/6 h-20 mb-5  border-b-2 border-red-600	 ">
-          <GrList size={30} color="#B91202" className="mx-4" />
+        <div className="flex flex-row justify-start items-center w-5/6 h-20 mb-5  border-b-2 border-white-600	 ">
+          <GrList size={30} color="#F6900C" className="mx-4" />
           <input
-            className="text-lg w-5/6  placeholder:text-[#B91202]  text-[#B91202] bg-transparent focus:no-underline pl-1 outline-none"
+            className="text-lg w-5/6  placeholder:text-[#25335C]  text-[#25335C] bg-transparent focus:no-underline pl-1 outline-none"
             type="text"
             placeholder="Digite a categoria"
             name="categoria"
@@ -116,10 +132,10 @@ const FormModalProduct = (props: FormModalProduct) => {
             onChange={(e) => setCategoria(e.target.value)}
           />
         </div>
-        <div className="flex flex-row justify-start items-center w-5/6 h-20 mb-5  border-b-2 border-red-600	 ">
-          <GrIntegration size={30} color="#B91202" className="mx-4" />
+        <div className="flex flex-row justify-start items-center w-5/6 h-20 mb-5  border-b-2 border-white-600	 ">
+          <GrIntegration size={30} color="#F6900C" className="mx-4" />
           <input
-            className="text-lg w-5/6  placeholder:text-[#B91202]  text-[#B91202] bg-transparent focus:no-underline pl-1 outline-none"
+            className="text-lg w-5/6  placeholder:text-[#25335C]  text-[#25335C] bg-transparent focus:no-underline pl-1 outline-none"
             type="texte"
             placeholder="Digite a marca"
             name="marca"
@@ -128,26 +144,26 @@ const FormModalProduct = (props: FormModalProduct) => {
             onChange={(e) => setMarca(e.target.value)}
           />
         </div>
-        <div className="flex flex-row justify-start items-center w-5/6 h-20 mb-5  border-b-2 border-red-600	 ">
-          <GrImage size={30} color="#B91202" className="mx-4" />
+        <div className="flex flex-row justify-start items-center w-5/6 h-20 mb-5  border-b-2 border-white-600	 ">
+          <GrImage size={30} color="#F6900C" className="mx-4" />
           <input
-            className="text-lg w-5/6  placeholder:text-[#B91202]  text-[#B91202] bg-transparent focus:no-underline pl-1 outline-none"
+            className="text-lg w-5/6  placeholder:text-[#25335C]  text-[#25335C] bg-transparent focus:no-underline pl-1 outline-none"
             type="file"
             placeholder="Escolha a imagem do produto"
             name="imagem"
             title="imagem"
             accept="image/*"
-            value={imagem}
-            onChange={(e) => setImagem(e.target.value)}
+            onChange={(e) => setImagem(e.target.files[0])}
           />
         </div>
+        <button
+          type="submit"
+          onClick={saveProduct}
+          className="text-white transition ease-in-out delay-150 mt-10 w-5/6 h-16 bg-[#25335C] rounded-3xl text-2xl hover:-translate-y-1 hover:scale-110 hover:bg-[#25335C] duration-300 hover:opacity-90"
+        >
+          {props.typeForm === "new" ? "Adicionar" : "Editar"}
+        </button>
       </form>
-      <button
-        onClick={saveProduct}
-        className="text-white transition ease-in-out delay-150 mt-10 w-5/6 h-16 bg-[#B91202] rounded-3xl text-2xl hover:-translate-y-1 hover:scale-110 hover:bg-[#B91247] duration-300 hover:opacity-90"
-      >
-        {props.typeForm === "new" ? "Adicionar" : "Editar"}
-      </button>
       <Toaster />
     </>
   );

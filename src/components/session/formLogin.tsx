@@ -49,10 +49,10 @@ const FormLogin = () => {
         onKeyUp={handleKeyPress}
         className="mt-20 w-full h-2/6 flex justify-center items-center flex-col gap-4"
       >
-        <div className="flex flex-row justify-start items-center w-5/6 h-2/6 mb-5  border-b-2 border-red-600	 ">
-          <GrMailOption size={30} color="#B91202" className="mx-4" />
+        <div className="flex flex-row justify-start items-center w-5/6 h-2/6 mb-5  border-b-2 border-white	 ">
+          <GrMailOption size={30} color="#25335C" className="mx-4" />
           <input
-            className="text-lg w-5/6  placeholder:text-[#B91202]  text-[#B91202] bg-transparent focus:no-underline pl-1 outline-none"
+            className="text-lg w-5/6  placeholder:text-[#25335C]  text-[#25335C] bg-transparent focus:no-underline pl-1 outline-none"
             type="email"
             placeholder="Digite seu email"
             name="email"
@@ -61,10 +61,10 @@ const FormLogin = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <div className="flex flex-row justify-start items-center w-5/6 h-2/6 mb-5  border-b-2 border-red-600	 ">
-          <GrLock size={30} color="#B91202" className="mx-4" />
+        <div className="flex flex-row justify-start items-center w-5/6 h-2/6 mb-5  border-b-2 border-white	 ">
+          <GrLock size={30} color="#25335C" className="mx-4" />
           <input
-            className="text-lg w-5/6  placeholder:text-[#B91202] text-[#B91202] focus:no-underline pl-1 outline-none bg-transparent"
+            className="text-lg w-5/6  placeholder:text-[#25335C] text-[#25335C] focus:no-underline pl-1 outline-none bg-transparent"
             type="password"
             placeholder="Digite sua senha"
             name="password"
@@ -76,7 +76,7 @@ const FormLogin = () => {
       </form>
       <button
         onClick={loginUser}
-        className="text-white transition  ease-in-out delay-150 mt-20 w-5/6 h-16 bg-[#B91202] rounded-3xl text-2xl hover:-translate-y-1 hover:scale-110 hover:bg-[#B91247] duration-300 hover:opacity-90 "
+        className="text-white transition  ease-in-out delay-150 mt-20 w-5/6 h-16 bg-[#25335C] rounded-3xl text-2xl hover:-translate-y-1 hover:scale-110 hover:bg-cyan-400 duration-300 hover:opacity-90 "
       >
         Entrar
       </button>
