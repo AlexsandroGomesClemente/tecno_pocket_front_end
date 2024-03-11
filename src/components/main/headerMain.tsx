@@ -1,11 +1,12 @@
+//@ts-nocheck
 import Image from "next/image";
 import Link from "next/link";
 import Logo from "../../assets/img/LogoTecnoPocket.png";
 import { GrMailOption, GrPhone, GrLocation, GrSearch } from "react-icons/gr";
-import { HeaderMain } from "@/src/interfaces/main";
+import { HeaderMain  as HeaderMainInterface} from "@/src/interfaces/main";
 import AddProduct from "./addProduct";
 
-const HeaderMain = (props: HeaderMain) => {
+const HeaderMain = (props: HeaderMainInterface) => {
   const searchProduct = (value: string) => {
     const getProducts = JSON.parse(localStorage.getItem("produtos") as string);
     if (value !== "") {

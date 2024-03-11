@@ -8,10 +8,10 @@ import {
 } from "react-icons/gr";
 import { useState } from "react";
 import httpCommons from "@/src/helpers/httpCommons";
-import { FormModalProduct } from "@/src/interfaces/main";
+import { FormModalProduct as FormModalProductInterface } from "@/src/interfaces/main";
 import toast, { Toaster } from "react-hot-toast";
 
-const FormModalProduct = (props: FormModalProduct) => {
+const FormModalProduct = (props: FormModalProductInterface) => {
   let productUpdate: any = localStorage.getItem("updateProduct") || "";
   if (productUpdate !== "") productUpdate = JSON.parse(productUpdate);
   const [titulo, setTitulo] = useState<string>(productUpdate.titulo || "");
@@ -153,7 +153,7 @@ const FormModalProduct = (props: FormModalProduct) => {
             name="imagem"
             title="imagem"
             accept="image/*"
-            onChange={(e) => setImagem(e.target.files[0])}
+            onChange={(e: any) => setImagem(e.target.files[0])}
           />
         </div>
         <button
