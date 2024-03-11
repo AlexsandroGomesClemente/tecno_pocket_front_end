@@ -1,5 +1,6 @@
 import httpCommons from "@/src/helpers/httpCommons";
 import { TableMain } from "@/src/interfaces/main";
+import { GrFormTrash, GrFormEdit } from "react-icons/gr";
 import { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
@@ -64,23 +65,31 @@ const TableManager = (props: TableMain) => {
                   <td>{item.preco}</td>
                   <td>{item.marca}</td>
                   <td>{item.categoria}</td>
-                  <td className="flex gap-2">
-                    <button
-                      onClick={(e) => {
-                        localStorage.removeItem("updateProduct");
-                        const product = { ...dataTable[index] };
-                        localStorage.setItem(
-                          "updateProduct",
-                          JSON.stringify(product)
-                        );
-                        props.onChangeModal();
-                      }}
-                    >
-                      Editar
-                    </button>
-                    <button onClick={(e) => removeProduct(e, item.id)}>
-                      Excluir
-                    </button>
+                  <td>
+                    <div className="flex justify-around items-end gap-2">
+                      <button
+                        onClick={(e) => {
+                          localStorage.removeItem("updateProduct");
+                          const product = { ...dataTable[index] };
+                          localStorage.setItem(
+                            "updateProduct",
+                            JSON.stringify(product)
+                          );
+                          props.onChangeModal();
+                        }}
+                        className="flex justify-center items-center gap-2 bg-cyan-400 hover:opacity-90		 w-5/12 h-7 rounded-2xl text-md"
+                      >
+                        <GrFormEdit size={25} />
+                        Editar
+                      </button>
+                      <button
+                        className="flex justify-center items-center gap-2 bg-red-600	hover:opacity-90	 w-5/12 h-7 rounded-2xl text-md"
+                        onClick={(e) => removeProduct(e, item.id)}
+                      >
+                        <GrFormTrash size={25} />
+                        Excluir
+                      </button>
+                    </div>
                   </td>
                 </tr>
               ))

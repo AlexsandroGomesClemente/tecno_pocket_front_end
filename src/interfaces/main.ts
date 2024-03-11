@@ -16,8 +16,8 @@ export interface TitleProduct  {
   typeForm: string;
 }
 export interface HeaderMain {
-  typePage: string;
-  onChangeModal: () => void;
+  typePage?: string;
+  onChangeModal?: () => void | any;
 }
 
 export interface TableMain {

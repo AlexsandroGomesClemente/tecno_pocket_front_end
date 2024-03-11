@@ -47,7 +47,7 @@
   border-collapse: unset;
   /*define a separação entre as bordar*/
   padding: 10px;
-  text-align: left;
+  text-align: start;
 }
 
 th {
